@@ -20,7 +20,7 @@ public class conexion {
     public Connection conecta(){
         try {
             Class.forName(driver);
-            con = (Connection) DriverManager.getConnection(url,usuario,pass);localhost
+            con = (Connection) DriverManager.getConnection(url,usuario,pass);
             //con = (Connection) DriverManager.getConnection(txt); //solo para la nube zure
             /*if (con != null) {
                 System.out.println("Conexion establecida");
