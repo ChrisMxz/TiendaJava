@@ -14,14 +14,14 @@ Se ejecuta sin exportar nada, ya que la BD esta alojada en Microsoft Azure.
 
 
 ## Funciones
-- Lista de Productos
+- Lista de Productos: 
 Busqueda por id o nombre del producto.
 Insertar y actualizar
 Se selecciona el concepto dentro del formulario, tambien contiene la funcionalidad CRUD
-- Lista de Clientes
+- Lista de Clientes: 
 Busqueda por id, nombre, apellido paterno
 Insertar y actualizar
-- Lista de Pedidos
+- Lista de Pedidos: 
 Busqueda por id
 Insertar y actualizar
 ![image](https://user-images.githubusercontent.com/62969243/184026826-cdb1cabb-6580-4bc4-9181-747074373390.png)
