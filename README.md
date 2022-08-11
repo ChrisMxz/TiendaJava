@@ -1,9 +1,10 @@
 # Tienda Java
-Se utilizo xammp para las pruebas locales
-y para implementacion se uso BD SQL de Microsoft Azure.
+
+Se utilizo IDE Netbeans y xampp para la BD MySql  local
+Para implementacion se uso BD SQL de Microsoft Azure.
 
 - jarLocal
-Funciona montando la bd localmente con ayuda de xammp
+Funciona montando la bd localmente con ayuda de xampp
 exportando la BD "tienda".
 
 - jarNube
