@@ -24,4 +24,6 @@ Insertar y actualizar
 - Lista de Pedidos: 
 Busqueda por id
 Insertar y actualizar
+
+- Doble click para seleccionar un item de la tabla
 ![image](https://user-images.githubusercontent.com/62969243/184026826-cdb1cabb-6580-4bc4-9181-747074373390.png)
