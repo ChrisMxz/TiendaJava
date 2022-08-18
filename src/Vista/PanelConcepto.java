@@ -331,18 +331,16 @@ public class PanelConcepto extends javax.swing.JFrame {
 
         // Se presiona boton aceptar
         if (FormularioOk()) { //verificamos que no falte ningun dato
-            if (!edicion) {//agregando  
+            if (!edicion) {//agregando
                 cargarFormulario(); //cargamos los datos escritos en el formulario
                 conceptos.Insertar(concepto); //llamamos al metodo para ingresar nuevo 
-                Limpiar();
             } else {//actualizando
                 int id=Integer.parseInt(txtid.getText());//id antiguo en caso de cambiarse
                 cargarFormulario(); //cargando los nuevos datos
                 conceptos.Actualizar(id,concepto);//envio el objeto producto a crud para actualizarlo
-                cargaTabla();// Actualizo la tabla 
                 edicion = false;
-                Limpiar();
             }
+            Limpiar();
             estado();
         }else{JOptionPane.showMessageDialog(this, "Faltan campos por llenar");}
 
@@ -370,17 +368,14 @@ public class PanelConcepto extends javax.swing.JFrame {
 
     private void btneliminaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneliminaMouseClicked
         //Se presiona boton para eliminar
-
-        //Verificacmos que los campos esten llenos
-        if (FormularioOk()) {
+        if (JOptionPane.showConfirmDialog(this, "Se eliminará ¿Desea continuar?",
+                "Aviso", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
             conceptos.Eliminar(concepto.getId_concepto());//envio el objeto
-            edicion=false;
+            edicion = false;
             estado();
             Limpiar();
 
-        } else {
-            JOptionPane.showMessageDialog(this, "Faltan campos por llenar");
-        }   
+        }
     }//GEN-LAST:event_btneliminaMouseClicked
 
     private void tbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbMouseClicked

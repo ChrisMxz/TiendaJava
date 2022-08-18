@@ -468,19 +468,16 @@ public final class PanelClientes extends javax.swing.JPanel {
     private void aceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aceptarMouseClicked
         // Se presiona boton aceptar
         if (FormularioOk()) { //verificamos que no falte ningun dato
+            cargarFormulario(); //cargamos los datos escritos en el formulario
             if (!edicion) {//agregando 
                 int id;
-                cargarFormulario(); //cargamos los datos escritos en el formulario
                 id = clientes.insertar(cliente); //llamamos al metodo para ingresar nuevo 
                 cliente.setId_cliente(id);
-                Limpiar();
             } else {//actualizando
-                cargarFormulario(); //cargando los nuevos datos
                 clientes.actualizar(cliente);//envio el objeto producto a crud para actualizarlo
-                cargaTabla();// Actualizo la tabla 
-                edicion = false;
-                Limpiar();
+                edicion = false;  
             }
+            Limpiar();
             estado();
         }else{JOptionPane.showMessageDialog(this, "Faltan campos por llenar");}
     }//GEN-LAST:event_aceptarMouseClicked
@@ -504,20 +501,13 @@ public final class PanelClientes extends javax.swing.JPanel {
 
     private void bteliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bteliminarMouseClicked
         //Se presiona boton para eliminar
-
-        //Verificacmos que los campos esten llenos
-        if (FormularioOk()) {
             if (JOptionPane.showConfirmDialog(this, "Se eliminará ¿Desea continuar?",
                     "Aviso", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 clientes.eliminar(cliente.getId_cliente());//envio el objeto producto a crud para insertarlo
                 edicion = false;
                 estado();
                 Limpiar();
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Faltan campos por llenar");
-        }
+            } 
     }//GEN-LAST:event_bteliminarMouseClicked
 
     private void txtidKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidKeyTyped

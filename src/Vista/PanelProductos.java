@@ -429,20 +429,17 @@ public class PanelProductos extends javax.swing.JPanel{
     private void btnaceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnaceptarMouseClicked
         // Se presiona boton aceptar
         if (FormularioOk()) { //verificamos que no falte ningun dato
+            cargarFormulario(); //cargamos los datos escritos en el formulario
             if (!edicion) {//agregando 
                 int id;
-                cargarFormulario(); //cargamos los datos escritos en el formulario
                 id = productos.insertar(producto); //llamamos al metodo para ingresar nuevo producto
                 producto.setId_producto(id);
-                Limpiar();
             } else {//actualizando
-                cargarFormulario(); //cargando los nuevos datos
                 productos.actualizar(producto);//envio el objeto producto a crud para actualizarlo
                 JOptionPane.showMessageDialog(null, "Actualizado");
-                cargaTabla();// Actualizo la tabla de productos
-                edicion = false;
-                Limpiar();
+                edicion = false;  
             }
+            Limpiar();
             estado();
         } else {
             JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
@@ -517,19 +514,15 @@ public class PanelProductos extends javax.swing.JPanel{
 
     private void btneliminaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneliminaMouseClicked
         //Se presiona boton para eliminar
-        //Verificacmos que los campos esten llenos
-        if (FormularioOk()) {
             if (JOptionPane.showConfirmDialog(this, "Se eliminará ¿Desea continuar?",
                     "Aviso", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 productos.eliminar(producto.getId_producto());//envio el objeto producto a crud para insertarlo
                 edicion = false;
-                estado();
                 Limpiar();
+                estado();
+                
             }
 
-        } else {
-            JOptionPane.showMessageDialog(this, "Faltan campos por llenar");
-        }
     }//GEN-LAST:event_btneliminaMouseClicked
 
     private void txtconceptoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtconceptoMouseClicked
