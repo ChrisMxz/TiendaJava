@@ -7,9 +7,6 @@ Para implementacion se uso BD SQL de Microsoft Azure.
 Funciona montando la bd localmente con ayuda de xampp
 exportando la BD "tienda".
 
-- jarNube
-Se ejecuta sin exportar nada, ya que la BD esta alojada en Microsoft Azure.
-
 ## Estructura general de la BD
 ![image](https://user-images.githubusercontent.com/62969243/184046804-805fc1f3-5da8-4d26-9516-ee83435b7e97.png)
 
